@@ -13,7 +13,7 @@ spec:
     path: add-ons/kube-prometheus-stack
     targetRevision: {{ .Values.targetRevision }}
     helm:
-      skipCrds: true
+#      skipCrds: true
       values: |
         kube-prometheus-stack:
           prometheus:
@@ -32,10 +32,10 @@ spec:
     syncOptions:
     - ServerSideApply=true
     - CreateNamespace=true    
-    retry:
-      limit: 1
-      backoff:
-        duration: 5s
-        factor: 2
-        maxDuration: 1m
+#     retry:
+#       limit: 1
+#       backoff:
+#         duration: 5s
+#         factor: 2
+#         maxDuration: 1m
 {{- end -}}
